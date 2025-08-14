@@ -1,14 +1,17 @@
-import { useState } from "react"
+import { useState } from "react";
+import { useOutletContext } from "react-router-dom";
 
 function Login() {
-  const [username, setUsername] = useState("")
+  const login = useOutletContext();
+  const [username, setUsername] = useState("");
 
   function handleChange(e) {
-    setUsername(e.target.value)
+    setUsername(e.target.value);
   }
 
   function handleLogin(e) {
-    e.preventDefault()
+    e.preventDefault();
+    login();
   }
 
   return (
